@@ -10,5 +10,7 @@ window.PROJECTS = [
   {id:"harf-degirmeni", tr:"Harf Değirmeni", en:"Letter Mill", icon:"assets/harf-degirmeni.png", path:"harf-degirmeni/",
    short:{tr:"Harflerden kelimeler türetin, sakin bir kelime bulmacası.", en:"A calm Turkish word puzzle."}},
   {id:"soz-heybesi", tr:"Söz Heybesi", en:"Söz Heybesi", icon:"assets/soz-heybesi.png", path:"soz-heybesi/",
-   short:{tr:"Atasözlerini harf taşlarıyla tamamlayın, sakin bir kelime bulmacası.", en:"Complete Turkish proverbs with letter tiles, a calm word puzzle."}}
+   short:{tr:"Atasözlerini harf taşlarıyla tamamlayın, sakin bir kelime bulmacası.", en:"Complete Turkish proverbs with letter tiles, a calm word puzzle."}},
+  {id:"firca-bahcesi", tr:"Fırça Bahçesi", en:"Brush Garden", icon:"assets/firca-bahcesi.png", path:"firca-bahcesi/",
+   short:{tr:"Çocuklar için sakin çizim ve boyama bahçesi.", en:"A calm drawing and colouring garden for children."}}
 ];
