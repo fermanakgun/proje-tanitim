@@ -70,4 +70,4 @@ BASIN-KITI-REHBERI.md      bu belge
 ## 6. Diğer yerler
 
 - Her projenin kendi README'sine "Basın kiti" bağlantısı (bu sitedeki proje adresi) eklenir.
-- GitHub profil README'sindeki "Projelerim" tablosunda her proje satırından basın kiti sayfasına bağlantı verilir.
+- **Zorunlu:** her yeni proje GitHub profil README'sindeki (`fermanakgun/fermanakgun`) "Projelerim" tablosuna, kök `index.html` ile aynı sırada eklenir. Ayrıntı: `CLAUDE.md`.
