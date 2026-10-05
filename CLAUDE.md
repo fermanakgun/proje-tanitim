@@ -12,6 +12,7 @@ Siteye eklenen **her yeni proje aynı iş içinde GitHub profil sayfasına da ek
 
 1. Projeyi `<proje-adi>/` klasörüne ekle (TR `index.html` + EN `en.html` + `assets/`), ikonunu `assets/<proje-adi>.png` olarak koy.
 2. Kök `index.html` listesine kart ekle (ikon, ad, kısa tanıtım TR · EN, Türkçe/English bağlantıları).
+   - **Ortak site özellikleri (zorunlu):** `assets/projects.js` listesine projeyi ekle (tüm sayfalarda "Tüm projeler" menüsü, altbilgi şeridi ve kök kartlar buradan gelir; sıra kök `index.html` ve profil README'siyle aynı olsun). Galeri görsel kümelerini `data-lightbox` ile işaretle (örn. `<div class="shots" data-lightbox>`); büyük kaynak için görsele `data-full`. Sayfaya `../assets/site.css`, `../assets/projects.js` ve `../assets/site.js` (defer) ekle; TR/EN düğmesi (`.ps-lang`), "Tüm projeler" (`.ps-menu`) ve altbilgi şeridi (`data-ps-footer`) işaretlemesini mevcut sayfalardan kopyala. EN karşılığı (`en.html`) zorunlu.
 3. **Profil README'si:** `fermanakgun/fermanakgun` deposundaki `README.md` → "Projelerim" tablosuna (`<table>` … `<!-- /Projelerim -->` arası) aynı projeyi **kök `index.html` ile aynı sırada** bir `<tr>` satırı olarak ekle:
    - ikon: `https://fermanakgun.github.io/proje-tanitim/assets/<proje-adi>.png` (width 96), tanıtım sayfasına bağlı
    - **ad** (tanıtım sayfası bağlantılı) · *İngilizce adı* — platform

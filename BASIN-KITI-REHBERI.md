@@ -67,6 +67,14 @@ BASIN-KITI-REHBERI.md      bu belge
 - Site herkese açıktır: e-posta dışında kişisel bilgi, iç belge, kimlik/anahtar koyma.
 - Büyük dosyalar: tek dosya 100 MB sınırının altında, klasör toplamı 60 MB altında tut; video orijinal kalır (küçültme), gerekirse diğer görselleri hafiflet.
 
+## 5b. Ortak gezinme, dil düğmesi ve lightbox
+
+Tüm sayfalar `assets/` altındaki ortak dosyaları kullanır (sayfa içinde JavaScript yazılmaz):
+- `assets/projects.js`: proje listesi (`window.PROJECTS`: id, tr/en ad, ikon, klasör, kısa metin). Yeni proje buraya eklenir; "Tüm projeler" menüsü, altbilgi şeridi ve kök sayfa kartları bu listeden üretilir. TR sayfa `<klasör>`, EN sayfa `<klasör>en.html`.
+- `assets/site.js` + `assets/site.css`: açılır menü (klavye, Esc, dış tık), TR | EN düğmesi (tercih `localStorage`'a yazılır, zorla yönlendirme yok) ve lightbox (kapatma, ok tuşları, kaydırma, sayaç, odak tuzağı).
+- Sayfa işaretlemesi: üst çubukta `<div class="ps-menu"><a href="../">Tüm projeler</a></div>` ve `<span class="ps-lang">…TR/EN…</span>`; altbilgide `<div class="ps-foot" data-ps-footer>`; galeri kümesinde `data-lightbox` (JS yokken bağlantılar çalışır). Yollar alt klasörde `../assets/…`, kökte `assets/…`.
+- Her sayfanın EN karşılığı (`en.html`) ve `hreflang`/`canonical` zorunludur; kökte de `index.html` ↔ `en.html`.
+
 ## 6. Diğer yerler
 
 - Her projenin kendi README'sine "Basın kiti" bağlantısı (bu sitedeki proje adresi) eklenir.
