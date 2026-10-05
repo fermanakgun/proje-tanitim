@@ -70,9 +70,9 @@ BASIN-KITI-REHBERI.md      bu belge
 ## 5b. Ortak gezinme, dil düğmesi ve lightbox
 
 Tüm sayfalar `assets/` altındaki ortak dosyaları kullanır (sayfa içinde JavaScript yazılmaz):
-- `assets/projects.js`: proje listesi (`window.PROJECTS`: id, tr/en ad, ikon, klasör, kısa metin). Yeni proje buraya eklenir; "Tüm projeler" menüsü, altbilgi şeridi ve kök sayfa kartları bu listeden üretilir. TR sayfa `<klasör>`, EN sayfa `<klasör>en.html`.
-- `assets/site.js` + `assets/site.css`: açılır menü (klavye, Esc, dış tık), TR | EN düğmesi (tercih `localStorage`'a yazılır, zorla yönlendirme yok) ve lightbox (kapatma, ok tuşları, kaydırma, sayaç, odak tuzağı).
-- Sayfa işaretlemesi: üst çubukta `<div class="ps-menu"><a href="../">Tüm projeler</a></div>` ve `<span class="ps-lang">…TR/EN…</span>`; altbilgide `<div class="ps-foot" data-ps-footer>`; galeri kümesinde `data-lightbox` (JS yokken bağlantılar çalışır). Yollar alt klasörde `../assets/…`, kökte `assets/…`.
+- `assets/projects.js`: proje listesi (`window.PROJECTS`: id, tr/en ad, ikon, klasör, kısa metin). Yeni proje buraya eklenir; "Tüm projeler" menüsü, altbilgideki "Diğer uygulamalar" kartları (geçerli proje hariç, kökte hepsi) ve kök sayfa kartları bu listeden üretilir. TR sayfa `<klasör>`, EN sayfa `<klasör>en.html`.
+- `assets/site.js` + `assets/site.css`: açılır menü (klavye, Esc, dış tık), ≤900 px'te bölüm bağlantılarını (`header nav`) açan hamburger düğmesi (`aria-expanded`/`aria-controls`, Esc ve dış tıkla kapanır; JS yokken bağlantılar görünür kalır), 44 px dokunma hedefleri, TR | EN düğmesi (tercih `localStorage`'a yazılır, zorla yönlendirme yok) ve lightbox (kapatma, ok tuşları, kaydırma, sayaç, odak tuzağı).
+- Sayfa işaretlemesi: üst çubukta `<div class="ps-menu"><a href="../">Tüm projeler</a></div>` ve `<span class="ps-lang">…TR/EN…</span>`; altbilgide `<div class="ps-foot" data-ps-footer>` (JS yokken içindeki "Tüm projeler" bağlantısı kalır); galeri kümesinde `data-lightbox` (JS yokken bağlantılar çalışır). Yollar alt klasörde `../assets/…`, kökte `assets/…`.
 - Her sayfanın EN karşılığı (`en.html`) ve `hreflang`/`canonical` zorunludur; kökte de `index.html` ↔ `en.html`.
 
 ## 6. Diğer yerler

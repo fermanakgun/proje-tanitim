@@ -6,8 +6,8 @@
   var LANG = (html.lang || "tr").slice(0, 2) === "en" ? "en" : "tr";
   var EN = LANG === "en";
   var T = EN
-    ? {all: "All projects", home: "All projects (home)", foot: "All projects", close: "Close", prev: "Previous", next: "Next", dlg: "Image viewer", tr: "Turkish", en: "English"}
-    : {all: "Tüm projeler", home: "Tüm projeler (ana sayfa)", foot: "Tüm projeler", close: "Kapat", prev: "Önceki", next: "Sonraki", dlg: "Görsel görüntüleyici", tr: "Türkçe", en: "English"};
+    ? {all: "All projects", home: "All projects (home)", foot: "All projects", close: "Close", other: "Other apps", menu: "Menu", prev: "Previous", next: "Next", dlg: "Image viewer", tr: "Turkish", en: "English"}
+    : {all: "Tüm projeler", home: "Tüm projeler (ana sayfa)", foot: "Tüm projeler", close: "Kapat", other: "Diğer uygulamalar", menu: "Menü", prev: "Önceki", next: "Sonraki", dlg: "Görsel görüntüleyici", tr: "Türkçe", en: "English"};
 
   /* Site kökü: bu betiğin adresinden (…/assets/site.js) türetilir. */
   var scr = doc.currentScript || (function () {
@@ -71,18 +71,43 @@
   }
   Array.prototype.forEach.call(doc.querySelectorAll(".ps-menu"), enhanceMenu);
 
-  /* Altbilgi proje şeridi. */
+  /* Altbilgi "Diğer uygulamalar" kartları (geçerli proje hariç; kökte hepsi). */
   Array.prototype.forEach.call(doc.querySelectorAll("[data-ps-footer]"), function (box) {
     if (!P.length) return;
     var ul = el("ul");
     P.forEach(function (p) {
-      var a = el("a", {href: pHref(p), title: p.short ? (EN ? p.short.en : p.short.tr) : ""}, [el("img", {src: rootUrl(p.icon), alt: "", width: "26", height: "26", loading: "lazy"}), el("span", {text: pName(p)})]);
-      if (isCurrent(p)) a.setAttribute("aria-current", "page");
+      if (isCurrent(p)) return;
+      var a = el("a", {"class": "ps-card", href: pHref(p)}, [
+        el("img", {src: rootUrl(p.icon), alt: "", width: "40", height: "40", loading: "lazy"}),
+        el("span", {"class": "ps-card-t"}, [el("strong", {text: pName(p)}), el("small", {text: p.short ? (EN ? p.short.en : p.short.tr) : ""})])
+      ]);
       var li = el("li"); li.appendChild(a); ul.appendChild(li);
     });
     box.textContent = "";
-    box.appendChild(el("p", {"class": "ps-foot-t", text: T.foot}));
-    box.appendChild(ul);
+    box.appendChild(el("p", {"class": "ps-foot-t", text: ul.children.length === P.length ? T.foot : T.other}));
+    if (ul.children.length) box.appendChild(ul);
+    if (ul.children.length < P.length) {
+      var all = el("p", {}, [el("a", {href: homeHref(), text: T.home})]); all.className = "ps-foot-all"; box.appendChild(all);
+    }
+  });
+
+  /* Hamburger: ≤900 px'te bölüm bağlantıları (nav) panele taşınır. */
+  Array.prototype.forEach.call(doc.querySelectorAll("header nav"), function (nav) {
+    var hdr = nav.closest("header"), wrap = nav.parentNode;
+    var id = nav.id || (nav.id = "ps-nav");
+    var btn = el("button", {type: "button", "class": "ps-burger", "aria-expanded": "false", "aria-controls": id, "aria-label": T.menu});
+    wrap.appendChild(btn); hdr.setAttribute("data-ps-burger", "");
+    function open() { hdr.classList.add("ps-nav-open"); btn.setAttribute("aria-expanded", "true"); var f = nav.querySelector("a"); if (f) f.focus(); }
+    function close(back) { hdr.classList.remove("ps-nav-open"); btn.setAttribute("aria-expanded", "false"); if (back) btn.focus(); }
+    btn.addEventListener("click", function () { hdr.classList.contains("ps-nav-open") ? close() : open(); });
+    nav.addEventListener("click", function (e) { if (e.target.closest("a")) close(); });
+    hdr.addEventListener("keydown", function (e) { if (e.key === "Escape" && hdr.classList.contains("ps-nav-open")) { e.stopPropagation(); close(true); } });
+    doc.addEventListener("click", function (e) { if (!hdr.contains(e.target)) close(); });
+    hdr.addEventListener("focusout", function (e) { if (e.relatedTarget && !nav.contains(e.relatedTarget) && e.relatedTarget !== btn) close(); });
+    var mq = window.matchMedia("(min-width:901px)");
+    (mq.addEventListener ? mq.addEventListener.bind(mq, "change") : mq.addListener.bind(mq))(function (m) { if (m.matches) close(); });
+    /* Menü ("Tüm projeler") açılınca panel kapanır. */
+    var pm = hdr.querySelector(".ps-menu"); if (pm) pm.addEventListener("click", function () { close(); });
   });
 
   /* Kök sayfadaki kartlar (liste tek yerden). */
