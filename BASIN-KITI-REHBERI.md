@@ -16,7 +16,7 @@ BASIN-KITI-REHBERI.md      bu belge
   en.html                  İngilizce sayfa
   assets/
     poster.jpg             klibin bir karesi
-    tanitim_tr.mp4, tanitim_en.mp4   tanıtım klibi (~6 MB, web için küçültülmüş)
+    tanitim_tr.mp4, tanitim_en.mp4   tanıtım klibi (tam çözünürlük, yeniden sıkıştırılmamış orijinal)
     <proje>-magaza-gorselleri.zip    tam boy mağaza görselleri (JPEG q90)
     presskit/              ikon 1024, OG banner 1200×630 (tr/en), kare promo 1080×1080
     shots/{tr,en}/         galeri görselleri (900 px genişlik JPEG)
@@ -49,7 +49,7 @@ BASIN-KITI-REHBERI.md      bu belge
   2. Testin düğme arama bekleyişleri (ölü anlar) `cuts` listesiyle işaretlenir ve kurguda çıkarılır.
   3. Kurgu AVFoundation + CoreAnimation ile (ffmpeg gerekmez): oyun tam ekran, üstüne sahne başına bir büyük konturlu pop kelime, kapanışta ikon + ad kartı.
   4. Ses: ElevenLabs `eleven_v3` ile enerjik anlatım (TR ve EN için ayrı erkek ses; stability 0.3, style 0.6, similarity 0.75, speaker boost; `[excited]` / `[enthusiastic]` etiketleri), oyunun müziği anlatım varken kısılır, geçişlerde swoosh, kapanışta pop.
-  5. Web için `AVAssetWriter` ile ~1,8 Mbps'e küçültülür (~6 MB); mağazaya yüklenecek tam kalite dosya ayrı tutulur.
+  5. Siteye **tam çözünürlükte, yeniden sıkıştırılmadan orijinal mp4** konur (kullanıcı kuralı); küçültülmüş kopya yapılmaz.
   - **İngilizce klip / görsel için oyunun arayüzü de İngilizce olmalı** (`-AppleLanguages "(en)" -AppleLocale en_US`); her kayıttan kare çıkarıp arayüz dilini doğrula.
 - **Poster:** klibin bir karesi (`poster.jpg`).
 - Dosya adları küçük harf, Türkçe karakter ve boşluk yok.
@@ -65,7 +65,7 @@ BASIN-KITI-REHBERI.md      bu belge
 - Çocuklara yönelik projelerde yaş/yaş aralığı yazma (proje kararı); gizlilik ve destek bağlantıları projenin kendi herkese açık sayfalarına gitsin.
 - EN sayfadaki görsel ve klip İngilizce arayüzden olmalı; yoksa sayfaya not düş.
 - Site herkese açıktır: e-posta dışında kişisel bilgi, iç belge, kimlik/anahtar koyma.
-- Büyük dosyalar: tek dosya 100 MB sınırının altında, klasör toplamı 60 MB altında tut; mümkünse klibi küçült.
+- Büyük dosyalar: tek dosya 100 MB sınırının altında, klasör toplamı 60 MB altında tut; video orijinal kalır (küçültme), gerekirse diğer görselleri hafiflet.
 
 ## 6. Diğer yerler
 
