@@ -12,5 +12,7 @@ window.PROJECTS = [
   {id:"soz-heybesi", tr:"Söz Heybesi", en:"Söz Heybesi", icon:"assets/soz-heybesi.png", path:"soz-heybesi/",
    short:{tr:"Atasözlerini harf taşlarıyla tamamlayın, sakin bir kelime bulmacası.", en:"Complete Turkish proverbs with letter tiles, a calm word puzzle."}},
   {id:"firca-bahcesi", tr:"Fırça Bahçesi", en:"Brush Garden", icon:"assets/firca-bahcesi.png", path:"firca-bahcesi/",
-   short:{tr:"Çocuklar için sakin çizim ve boyama bahçesi.", en:"A calm drawing and colouring garden for children."}}
+   short:{tr:"Çocuklar için sakin çizim ve boyama bahçesi.", en:"A calm drawing and colouring garden for children."}},
+  {id:"petek-kervani", tr:"Petek Kervanı", en:"Comb Couriers", icon:"assets/petek-kervani.png", path:"petek-kervani/",
+   short:{tr:"Arıların renkli kareleri kovana taşıdığı bal temalı bulmaca.", en:"A honey-themed puzzle where bees carry coloured squares to the hive."}}
 ];
