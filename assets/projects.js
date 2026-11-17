@@ -14,5 +14,7 @@ window.PROJECTS = [
   {id:"firca-bahcesi", tr:"Fırça Bahçesi", en:"Brush Garden", icon:"assets/firca-bahcesi.png", path:"firca-bahcesi/",
    short:{tr:"Çocuklar için sakin çizim ve boyama bahçesi.", en:"A calm drawing and colouring garden for children."}},
   {id:"petek-kervani", tr:"Petek Kervanı", en:"Comb Couriers", icon:"assets/petek-kervani.png", path:"petek-kervani/",
-   short:{tr:"Arıların renkli kareleri kovana taşıdığı bal temalı bulmaca.", en:"A honey-themed puzzle where bees carry coloured squares to the hive."}}
+   short:{tr:"Arıların renkli kareleri kovana taşıdığı bal temalı bulmaca.", en:"A honey-themed puzzle where bees carry coloured squares to the hive."}},
+  {id:"penlio", tr:"Penlio", en:"Penlio", icon:"assets/penlio.png", path:"penlio/",
+   short:{tr:"Öğrenciler için el yazısı not defteri ve PDF not uygulaması.", en:"A handwritten notebook and PDF notes app for students."}}
 ];
