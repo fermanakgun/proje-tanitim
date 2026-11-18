@@ -16,5 +16,7 @@ window.PROJECTS = [
   {id:"petek-kervani", tr:"Petek Kervanı", en:"Comb Couriers", icon:"assets/petek-kervani.png", path:"petek-kervani/",
    short:{tr:"Arıların renkli kareleri kovana taşıdığı bal temalı bulmaca.", en:"A honey-themed puzzle where bees carry coloured squares to the hive."}},
   {id:"penlio", tr:"Penlio", en:"Penlio", icon:"assets/penlio.png", path:"penlio/",
-   short:{tr:"Öğrenciler için el yazısı not defteri ve PDF not uygulaması.", en:"A handwritten notebook and PDF notes app for students."}}
+   short:{tr:"Öğrenciler için el yazısı not defteri ve PDF not uygulaması.", en:"A handwritten notebook and PDF notes app for students."}},
+  {id:"snapage", tr:"Snapage", en:"Snapage", icon:"assets/snapage.png", path:"snapage/",
+   short:{tr:"Belge, fatura ve kimlik için PDF tarayıcı; veriler cihazda kalır.", en:"A PDF scanner for documents, invoices and IDs; your data stays on device."}}
 ];
